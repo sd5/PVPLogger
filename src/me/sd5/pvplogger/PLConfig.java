@@ -19,7 +19,7 @@ public class PLConfig {
 		
 		dbUrl = "jdbc:mysql://" + config.getString("mysql-connection.host") + ":" + config.getString("mysql-connection.port") + "/" + config.getString("mysql-connection.database");
 		dbUser = config.getString("mysql-connection.user");
-		dbPassword = config.getString("mysql-connection.passwort");
+		dbPassword = config.getString("mysql-connection.password");
 		dbTable = config.getString("mysql-connection.table");
 	}
 	
