@@ -14,6 +14,8 @@ public class PLConfig {
 	
 	public static void load(FileConfiguration c) {
 		config = c;
+		config.options().copyDefaults(true);
+		config.options().header("PVPLogger config file.");
 		
 		dbUrl = "jdbc:mysql://" + config.getString("mysql-connection.host") + ":" + config.getString("mysql-connection.port") + "/" + config.getString("mysql-connection.database");
 		dbUser = config.getString("mysql-connection.user");
