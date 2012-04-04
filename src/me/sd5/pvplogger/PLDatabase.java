@@ -12,7 +12,7 @@ public class PLDatabase {
 	private Statement statement;
 	private ResultSet resultSet;
 	
-	public void init() {
+	public PLDatabase() {
 		try {
 			connection = DriverManager.getConnection(PLConfig.dbUrl, PLConfig.dbUser, PLConfig.dbPassword);
 			statement = connection.createStatement();
