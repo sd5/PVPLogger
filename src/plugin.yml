@@ -1,0 +1,5 @@
+name: PVPLogger
+version: 1.0.0
+description: Logs all pvp actions...
+authors: [sd5, MathijsNL]
+main: me.sd5.pvplogger.PVPLogger
