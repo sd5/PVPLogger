@@ -15,8 +15,17 @@ public class PLDatabase {
 	public void init() {
 		try {
 			connection = DriverManager.getConnection(PLConfig.dbUrl, PLConfig.dbUser, PLConfig.dbPassword);
+			statement = connection.createStatement();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+		
+		System.out.println("Creating MySQL table...");
+		try {
+			statement.execute("CREATE TABLE " + PLConfig.dbTable);
+			System.out.print("Sucessfully created MySQL table!");
+		} catch(SQLException e) {
+			System.out.println("MySQL table already exists!");
 		}
 	}
 	
