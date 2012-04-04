@@ -1,0 +1,8 @@
+#PVPLogger config file.
+mysql-connection:
+  host: localhost
+  port: 3306
+  database: pvplogger
+  user: root
+  password: ''
+  table: pvplogger
