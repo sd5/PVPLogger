@@ -1,1 +1,19 @@
-Readmeeeeee!
+=PVPLogger=
+PVPLogger is a Bukkit plugin which logs PVP damage.
+
+==Description==
+This plugin logs the PVP damage done by players to players. This information will be stored in a MySql database. The following information will be gathered and stored:
+
+*Date in YYYYMMDD
+*Time in HHMMSS
+*Location in-game (x,y,z)
+*World
+*Attacker
+*Victim
+*Total damage inflicted
+*Weapon used
+*Fatal
+*There might come a web interface to query for data.
+
+==Information==
+More information can be found at... (Must be added)
