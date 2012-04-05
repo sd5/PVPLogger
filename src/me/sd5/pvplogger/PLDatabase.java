@@ -20,6 +20,7 @@ public class PLDatabase {
 			System.out.print("Succesfully connected to database!");
 		} catch (SQLException e) {
 			System.out.println("Could not connect to database!");
+			return;
 		}
 		
 		System.out.println("Creating MySQL table...");
@@ -28,6 +29,7 @@ public class PLDatabase {
 			System.out.print("Sucessfully created MySQL table!");
 		} catch(SQLException e) {
 			System.out.println("MySQL table already exists!");
+			return;
 		}
 	}
 	
