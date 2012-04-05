@@ -13,17 +13,17 @@ public class PLDatabase {
 	private ResultSet resultSet;
 	
 	public PLDatabase() {
-		System.out.println("Connecting to database...");
+		System.out.println("[PVPLogger] Connecting to database...");
 		try {
 			connection = DriverManager.getConnection(PLConfig.dbUrl, PLConfig.dbUser, PLConfig.dbPassword);
 			statement = connection.createStatement();
-			System.out.println("Successfully connected to database!");
+			System.out.println("[PVPLogger] Successfully connected to database!");
 		} catch (SQLException e) {
-			System.out.println("Could not connect to database!");
+			System.out.println("[PVPLogger] Could not connect to database!");
 			return;
 		}
 		
-		System.out.println("Creating MySQL table...");
+		System.out.println("[PVPLogger] Creating MySQL table...");
 		try {
 		    String sql = "CREATE TABLE pvplogger("
 		        + "date       DATE, "
@@ -39,9 +39,9 @@ public class PLDatabase {
 		        + "fatal      BOOL)";
 
 		    statement.executeUpdate(sql);		
-			System.out.println("Successfully created MySQL table!");
+			System.out.println("[PVPLogger] Successfully created MySQL table!");
 		} catch(SQLException e) {
-			System.out.println("MySQL table already exists!");
+			System.out.println("[PVPLogger] MySQL table already exists!");
 			return;
 		}
 	}
