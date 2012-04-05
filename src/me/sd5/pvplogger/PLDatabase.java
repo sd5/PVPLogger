@@ -25,7 +25,23 @@ public class PLDatabase {
 		
 		System.out.println("Creating MySQL table...");
 		try {
-			statement.execute("CREATE TABLE " + PLConfig.dbTable);
+		//	statement.execute("CREATE TABLE " + PLConfig.dbTable);
+		    Statement stmt = connection.createStatement();
+
+		    String sql = "CREATE TABLE pvplogger("
+		        + "date       DATE, "
+		        + "time       TIME, "
+		        + "x          INTEGER, "
+		        + "y          INTEGER, "
+		        + "z          INTEGER, "
+		        + "world      VARCHAR(255), "
+		        + "attacker   VARCHAR(255), "
+		        + "victim     VARCHAR(255), "
+		        + "damage     INTEGER, "
+		        + "weapon     VARCHAR(255), "
+		        + "fatal      BOOL)";
+
+		    stmt.executeUpdate(sql);		
 			System.out.println("Successfully created MySQL table!");
 		} catch(SQLException e) {
 			System.out.println("MySQL table already exists!");
