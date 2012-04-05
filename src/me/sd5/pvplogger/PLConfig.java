@@ -12,10 +12,11 @@ public class PLConfig {
 	public static String dbPassword = null;
 	public static String dbTable = null;
 	
-	public static void load(FileConfiguration c) {
-		config = c;
+	public static void load(PVPLogger plugin) {
+		config = plugin.getConfig();
 		config.options().copyDefaults(true);
 		config.options().header("PVPLogger config file.");
+		plugin.saveConfig();
 		
 		dbUrl = "jdbc:mysql://" + config.getString("mysql-connection.host") + ":" + config.getString("mysql-connection.port") + "/" + config.getString("mysql-connection.database");
 		dbUser = config.getString("mysql-connection.user");

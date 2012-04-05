@@ -8,7 +8,7 @@ public class PVPLogger extends JavaPlugin {
 	public PLEntityListener entityListener = new PLEntityListener(this);
 	
 	public void onEnable() {
-		PLConfig.load(getConfig());
+		PLConfig.load(this);
 		database = new PLDatabase();
 		getServer().getPluginManager().registerEvents(entityListener, this);
 	}
