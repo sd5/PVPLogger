@@ -13,11 +13,13 @@ public class PLDatabase {
 	private ResultSet resultSet;
 	
 	public PLDatabase() {
+		System.out.print("Connecting to database...");
 		try {
 			connection = DriverManager.getConnection(PLConfig.dbUrl, PLConfig.dbUser, PLConfig.dbPassword);
 			statement = connection.createStatement();
+			System.out.print("Succesfully connected to database!");
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Could not connect to database!");
 		}
 		
 		System.out.println("Creating MySQL table...");
