@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.bukkit.entity.Player;
+
 public class PLDatabase {
 	
 	private Connection connection;
@@ -48,6 +50,10 @@ public class PLDatabase {
 			System.out.println("[PVPLogger] MySQL table already exists!");
 			return;
 		}
+	}
+	
+	public static void writeEntry(Player attacker, Player victim, int damage) {
+		
 	}
 	
 }
