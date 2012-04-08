@@ -67,7 +67,24 @@ public class PLDatabase {
 		int victim_y = p2.getLocation().getBlockZ();
 		int victim_z = p2.getLocation().getBlockZ();
 		String weapon = p1.getItemInHand().getType().toString().toLowerCase();
-		boolean fatal = (p2.getHealth() > 0) ? false : true;
+		int fatal = (p2.getHealth() > 0) ? 0 : 1;
+		
+		String sql = "INSERT INTO " + PLConfig.dbTable + " ("
+			+ "date, "
+			+ "attacker, attacker_world, attacker_x, attacker_y, attacker_z, "
+			+ "victim, victim_world, victim_x, victim_y, victim_z, "
+			+ "weapon, fatal"
+			+ ") VALUES ("
+			+ "'" + date + "', '"
+			+ attacker + "', '" + attacker_world + "', '" + attacker_x + "', '" + attacker_y + "', '" + attacker_z + "', '"
+			+ victim + "', '" + victim_world + "', '" + victim_x + "', '" + victim_y + "', '" + victim_z + "', '"
+			+ weapon + "', '" + fatal + "')";
+		
+		try {
+			statement.execute(sql);
+		} catch (SQLException e) {
+			System.out.println("[PVPLogger] Could not write data into database!");
+		}
 	}
 	
 	private static String getDate() {
