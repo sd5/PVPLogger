@@ -67,7 +67,7 @@ public class PLDatabase {
 		int victim_y = p2.getLocation().getBlockZ();
 		int victim_z = p2.getLocation().getBlockZ();
 		String weapon = p1.getItemInHand().getType().toString().toLowerCase();
-		int fatal = (p2.getHealth() > 0) ? 0 : 1;
+		int fatal = (p2.getHealth() - damage > 0) ? 0 : 1;
 		
 		String sql = "INSERT INTO " + PLConfig.dbTable + " ("
 			+ "date, "
