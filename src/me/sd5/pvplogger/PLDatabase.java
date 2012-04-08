@@ -28,23 +28,24 @@ public class PLDatabase {
 		}
 		
 		System.out.println("[PVPLogger] Creating MySQL table...");
+		
+		String sql = "CREATE TABLE pvplogger ("
+		    + "date           VARCHAR(255), "
+		    + "attacker       VARCHAR(255), "
+		    + "attacker_world VARCHAR(255), "
+		    + "attacker_x     INTEGER, "
+		    + "attacker_y     INTEGER, "
+		    + "attacker_z     INTEGER, "
+		    + "victim         VARCHAR(255), "
+		    + "victim_world   VARCHAR(255), "
+		    + "victim_x       INTEGER, "
+		    + "victim_y       INTEGER, "
+		    + "victim_z       INTEGER, "
+		    + "weapon         VARCHAR(255), "
+		    + "damage         INTEGER, "
+		    + "fatal          BOOL)";
+		    
 		try {
-		    String sql = "CREATE TABLE pvplogger ("
-		        + "date           VARCHAR(255), "
-		        + "attacker       VARCHAR(255), "
-		        + "attacker_world VARCHAR(255), "
-		        + "attacker_x     INTEGER, "
-		        + "attacker_y     INTEGER, "
-		        + "attacker_z     INTEGER, "
-		        + "victim         VARCHAR(255), "
-		        + "victim_world   VARCHAR(255), "
-		        + "victim_x       INTEGER, "
-		        + "victim_y       INTEGER, "
-		        + "victim_z       INTEGER, "
-		        + "weapon         VARCHAR(255), "
-		        + "damage         INTEGER, "
-		        + "fatal          BOOL)";
-
 		    statement.executeUpdate(sql);		
 			System.out.println("[PVPLogger] Successfully created MySQL table!");
 		} catch(SQLException e) {
