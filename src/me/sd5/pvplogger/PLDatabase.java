@@ -73,12 +73,12 @@ public class PLDatabase {
 			+ "date, "
 			+ "attacker, attacker_world, attacker_x, attacker_y, attacker_z, "
 			+ "victim, victim_world, victim_x, victim_y, victim_z, "
-			+ "weapon, fatal"
+			+ "weapon, damage, fatal"
 			+ ") VALUES ("
 			+ "'" + date + "', '"
 			+ attacker + "', '" + attacker_world + "', '" + attacker_x + "', '" + attacker_y + "', '" + attacker_z + "', '"
 			+ victim + "', '" + victim_world + "', '" + victim_x + "', '" + victim_y + "', '" + victim_z + "', '"
-			+ weapon + "', '" + fatal + "')";
+			+ weapon + "', '" + damage + "', '" + fatal + "')";
 		
 		try {
 			statement.execute(sql);
