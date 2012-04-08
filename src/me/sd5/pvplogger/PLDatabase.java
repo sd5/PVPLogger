@@ -12,9 +12,9 @@ import org.bukkit.entity.Player;
 
 public class PLDatabase {
 	
-	private Connection connection;
-	private Statement statement;
-	private ResultSet resultSet;
+	private static Connection connection;
+	private static Statement statement;
+	private static ResultSet resultSet;
 	
 	public PLDatabase() {
 		System.out.println("[PVPLogger] Connecting to database...");
