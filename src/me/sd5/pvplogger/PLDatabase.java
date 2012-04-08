@@ -57,11 +57,12 @@ public class PLDatabase {
 	public static void writeEntry(Player p1, Player p2, int damage) {
 		String date = getDate();
 		String attacker = p1.getName();
-		String attacker_world = p1.getLocation().getWorld().toString();
+		String attacker_world = p1.getWorld().getName();
 		int attacker_x = p1.getLocation().getBlockX();
 		int attacker_y = p1.getLocation().getBlockY();
 		int attacker_z = p1.getLocation().getBlockZ();
 		String victim = p2.getName();
+		String victim_world = p2.getWorld().getName();
 		int victim_x = p2.getLocation().getBlockX();
 		int victim_y = p2.getLocation().getBlockZ();
 		int victim_z = p2.getLocation().getBlockZ();
